@@ -1,0 +1,12 @@
+Version: 1.2
+
+PPU-12237e198da5fc2939b39d895f9d818ec076d50d:
+  "60 FPS":
+    Games:
+      "Wolfenstein":
+        BLES00564: [ 01.00 ]
+    Author: "baggybin"
+    Notes: "The engine draws one frame per 2 ticks of its 60 Hz clock (cvar com_minTics, default 2 = 30 FPS). This sets the default to 1. Game logic already runs at 60 Hz (com_userCommandHz 60), so game speed is unchanged. Use 720p to hold 60 FPS more consistently."
+    Patch Version: 1.0
+    Patch:
+      - [ byte, 0x00f34170, 0x31 ] # com_minTics default "2" -> "1"
